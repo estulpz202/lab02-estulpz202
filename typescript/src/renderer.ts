@@ -1,9 +1,9 @@
-import { newRectangle, Rectangle } from "./shapes/rectangle.js";
+import { Shape } from "./shapes/shape.js";
 
-function newRenderer(rectangle: Rectangle) {
+function newRenderer(figure: Shape) {
     return {
         draw() {
-            const area: number = rectangle.computeArea()
+            const area: number = figure.computeArea()
             console.log("Shape drawn\n" + "Its area is " + area)
         }
     }
