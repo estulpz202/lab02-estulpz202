@@ -1,12 +1,16 @@
-import { Shape } from "./shapes/shape.js";
+import { Shape } from './shapes/shape.js'
 
-function newRenderer(figure: Shape) {
-    return {
-        draw() {
-            const area: number = figure.computeArea()
-            console.log("Shape drawn\n" + "Its area is " + area)
-        }
-    }
+interface Renderer {
+  draw: () => void
 }
 
-export { newRenderer }
+function newRenderer (figure: Shape): Renderer {
+  return {
+    draw () {
+      const area: number = figure.computeArea()
+      console.log('Shape drawn\n' + 'Its area is ' + area)
+    }
+  }
+}
+
+export { Renderer, newRenderer }
